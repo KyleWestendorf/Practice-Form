@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,12 @@ namespace Practice_Form
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string message = AuthenticateClient.Authenticate(firstNameBox.Text, lastNameBox.Text, emailBox.Text);
+            Message.Text = message;
         }
     }
 }
